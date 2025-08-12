@@ -1,0 +1,60 @@
+name: Generate Smart City Maps
+
+on:
+  schedule:
+    # Run every 10 minutes
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+    # Allow manual triggering
+
+env:
+  MAPBOX_ACCESS_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
+  OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+  GEONAMES_USERNAME: ${{ secrets.GEONAMES_USERNAME }}
+
+jobs:
+  generate-maps:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Create virtual environment
+      working-directory: ./Server
+      run: |
+        python -m venv smart_dashboard_server
+        source smart_dashboard_server/bin/activate
+        echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
+        echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
+        
+    - name: Install dependencies
+      working-directory: ./Server
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Generate maps
+      working-directory: ./Server
+      run: |
+        python main.py
+        
+    - name: Commit and push changes
+      working-directory: ./Server
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Maps/
+        if git diff --cached --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "🗺️ Update maps - $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

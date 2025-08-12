@@ -1,0 +1,11 @@
+{
+  "vienna, austria": {
+    "lat": 48.208354,
+    "lng": 16.372504,
+    "timezone": "Europe/Vienna",
+    "utc_offset": "+1",
+    "city": "Vienna",
+    "country": "Austria",
+    "formatted_address": "Vienna, Austria"
+  }
+}
