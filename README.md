@@ -1,4 +1,4 @@
-# Smart Dashboard: City Maps
+# Smart City Maps
 
 The Smart Dashboard System creates beautiful, location-based maps with real time traffic and weather information and displays them on 7.3" e-paper displays. The system is designed for autonomous operation with minimal power consumption through intelligent deep sleep management.
 
