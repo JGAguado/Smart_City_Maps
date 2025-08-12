@@ -1,6 +1,6 @@
 # Smart City Maps
 
-The Smart Dashboard System creates beautiful, location-based maps with real time traffic and weather information and displays them on 7.3" e-paper displays. The system is designed for autonomous operation with minimal power consumption through intelligent deep sleep management.
+The Smart City Maps project creates beautiful, location-based maps with real time traffic and weather information and displays them on 7.3" e-paper displays. The system is designed for autonomous operation with minimal power consumption through intelligent deep sleep management.
 
 The system consists of a **Python server** for map generation running on Github's actions regularly and an **ESP32-S2-based firmware** that fetches the generated map and displays it on your 7-color e-paper.
 
