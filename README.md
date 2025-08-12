@@ -7,7 +7,7 @@ The system consists of a **Python server** for map generation running on Github'
 ### 🏗️ Architecture
 
 ```
-Smart Dashboard System
+Smart City Maps
 ├── 🐍 Server/                      # Python Map Generation
 │   ├── Map generation with Mapbox styles (allowing live traffic)
 │   ├── Real-time weather information (through Open Weather API)
