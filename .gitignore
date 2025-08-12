@@ -1,0 +1,14 @@
+/.vscode
+Firmware/include/default_config.h
+/Documentation
+/Server/Maps/*.bin
+/Server/Maps/*.c
+/Server/Maps/*.png
+/Server/fonts/*.gitkeep
+/Server/map_providers/styles/*.png
+/Server/smart_dashboard_server/Scripts/*.ps1
+/Server/smart_dashboard_server/Scripts/*
+/Server/smart_dashboard_server/Scripts/*.bat
+/Server/smart_dashboard_server/Scripts/*.exe
+/Server/smart_dashboard_server/*.cfg
+/Server/utils/icons/*.pdf
