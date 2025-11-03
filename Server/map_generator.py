@@ -319,7 +319,8 @@ def main():
 
         # Test locations
         test_locations = [
-            ("Vienna", "Austria")
+            ("Vienna", "Austria"),
+            ("Shenzhen", "China")
         ]
 
         for city, country in test_locations:
