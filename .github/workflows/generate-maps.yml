@@ -3,7 +3,7 @@ name: Generate Smart Dashboard Maps
 on:
   schedule:
     # Run every 10 minutes
-    - cron: '*/10 * * * *'
+    - cron: '*/02 * * * *'
   workflow_dispatch:
     # Allow manual triggering
 
